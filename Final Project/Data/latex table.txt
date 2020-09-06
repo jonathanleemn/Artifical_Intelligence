@@ -1,0 +1,27 @@
+\usepackage{adjustbox}
+
+\begin{table}
+  {\centering
+  \caption{Average Objective Function Value of 20 Trials}
+  \begin{adjustbox}{width=3.5in}
+    \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    \textbf{Neighbor Selection} & \textbf{10 jobs} & \textbf{20 jobs} & \textbf{40 jobs} & \textbf{60 jobs}  \\
+    \hline
+    Random                              & 59        & 66        & 143.4     & 207.35  \\
+    Replace One                         & 59        & 59.05     & 130.4     & 191.2     \\
+    Replace Two                         & 59        & 59.25     & 130.3     & 190.9    \\
+    Replace Five                        & 59        & 60.35     & 133       & 194.45    \\
+    Replace Longest                     & 59        & 76.9      & 149.95    & 214.3    \\
+    Randomly                            &           &           &           &           \\
+    Replace Longest                     & 76.05     & 120.1     & 222.3     & 287.4    \\
+    With Shortest                       &           &           &           &           \\
+    \hline
+    \end{tabular}%
+     \end{adjustbox}
+  \label{data_table}%
+  \\
+ }
+  \vspace*{5mm}
+  According to Table \ref{data_table}, replacing two jobs, on average, outperformed the rest of the other neighbor generating techniques by consistently returning a shorter completion time.
+\end{table}%

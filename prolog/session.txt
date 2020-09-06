@@ -1,0 +1,183 @@
+[1mtrue.[0m
+
+trace.
+
+
+[1mtrue.[0m
+
+theone(neo).
+
+
+   [1;32mCall: [0m(8) theone(neo) ? creep
+   [1;32mCall: [0m(9) oraclesaysnottheone(neo) ? creep
+   [1;32mCall: [0m(10) noob(neo) ? creep
+   [1;32mExit: [0m(10) noob(neo) ? creep
+   [1;32mCall: [0m(10) visitsoracle(neo) ? creep
+   [1;32mCall: [0m(11) noob(neo) ? creep
+   [1;32mExit: [0m(11) noob(neo) ? creep
+   [1;32mExit: [0m(10) visitsoracle(neo) ? creep
+   [1;32mExit: [0m(9) oraclesaysnottheone(neo) ? creep
+   [1;32mCall: [0m(9) loves(_3834, neo) ? creep
+   [1;32mExit: [0m(9) loves(trinity, neo) ? creep
+   [1;32mCall: [0m(9) pickstheone(trinity) ? creep
+   [1;32mCall: [0m(10) visitsoracle(trinity) ? creep
+   [1;32mCall: [0m(11) noob(trinity) ? creep
+   [1;31mFail: [0m(11) noob(trinity) ? creep
+   [1;33mRedo: [0m(10) visitsoracle(trinity) ? creep
+   [1;32mCall: [0m(11) disenchanted(trinity) ? creep
+   [1;32mExit: [0m(11) disenchanted(trinity) ? creep
+   [1;32mExit: [0m(10) visitsoracle(trinity) ? creep
+   [1;32mExit: [0m(9) pickstheone(trinity) ? creep
+   [1;32mExit: [0m(8) theone(neo) ? creep
+[1mtrue [0m[1m.[0m
+
+notrace.
+
+
+[1mtrue.[0m
+
+theone(X).
+
+
+X = neo [1m.[0m
+
+trace.
+
+
+[1mtrue.[0m
+
+exactly1(a,[a,b,c]).
+
+
+   [1;32mCall: [0m(8) exactly1(a, [a, b, c]) ? creep
+   [1;32mCall: [0m(9) count(a, [a, b, c], 1) ? creep
+   [1;32mCall: [0m(10) count(a, [b, c], _4232) ? creep
+   [1;32mCall: [0m(11) a==b ? creep
+   [1;31mFail: [0m(11) a==b ? creep
+   [1;33mRedo: [0m(10) count(a, [b, c], _4232) ? creep
+   [1;32mCall: [0m(11) count(a, [c], _4232) ? creep
+   [1;32mCall: [0m(12) a==c ? creep
+   [1;31mFail: [0m(12) a==c ? creep
+   [1;33mRedo: [0m(11) count(a, [c], _4232) ? creep
+   [1;32mCall: [0m(12) count(a, [], _4232) ? creep
+   [1;32mExit: [0m(12) count(a, [], 0) ? creep
+   [1;32mExit: [0m(11) count(a, [c], 0) ? creep
+   [1;32mExit: [0m(10) count(a, [b, c], 0) ? creep
+   [1;32mCall: [0m(10) 1 is 0+1 ? creep
+   [1;32mExit: [0m(10) 1 is 0+1 ? creep
+   [1;32mExit: [0m(9) count(a, [a, b, c], 1) ? creep
+   [1;32mExit: [0m(8) exactly1(a, [a, b, c]) ? creep
+[1mtrue [0m[1m.[0m
+
+notrace.
+
+
+[1mtrue.[0m
+
+exactly1(a,[b,c]).
+
+
+[1;31mfalse.[0m
+
+exactly1(a,[a,b,c,a]).
+
+
+[1;31mfalse.[0m
+
+trace.
+
+
+[1mtrue.[0m
+
+atmost1(a,[a,b,c]).
+
+
+   [1;32mCall: [0m(8) atmost1(a, [a, b, c]) ? creep
+   [1;32mCall: [0m(9) count(a, [a, b, c], 1) ? creep
+   [1;32mCall: [0m(10) count(a, [b, c], _4372) ? creep
+   [1;32mCall: [0m(11) a==b ? creep
+   [1;31mFail: [0m(11) a==b ? creep
+   [1;33mRedo: [0m(10) count(a, [b, c], _4372) ? creep
+   [1;32mCall: [0m(11) count(a, [c], _4372) ? creep
+   [1;32mCall: [0m(12) a==c ? creep
+   [1;31mFail: [0m(12) a==c ? creep
+   [1;33mRedo: [0m(11) count(a, [c], _4372) ? creep
+   [1;32mCall: [0m(12) count(a, [], _4372) ? creep
+   [1;32mExit: [0m(12) count(a, [], 0) ? creep
+   [1;32mExit: [0m(11) count(a, [c], 0) ? creep
+   [1;32mExit: [0m(10) count(a, [b, c], 0) ? creep
+   [1;32mCall: [0m(10) 1 is 0+1 ? creep
+   [1;32mExit: [0m(10) 1 is 0+1 ? creep
+   [1;32mExit: [0m(9) count(a, [a, b, c], 1) ? creep
+   [1;32mExit: [0m(8) atmost1(a, [a, b, c]) ? creep
+[1mtrue [0m[1m.[0m
+
+notrace.
+
+
+[1mtrue.[0m
+
+atmost1(a,[b,c]).
+
+
+[1mtrue [0m[1m.[0m
+
+atmost1(a,[a,b,c,a]).
+
+
+[1;31mfalse.[0m
+
+trace.
+
+
+[1mtrue.[0m
+
+atleast1(a,[a,b,c]).
+
+
+   [1;32mCall: [0m(8) atleast1(a, [a, b, c]) ? creep
+   [1;32mCall: [0m(9) count(a, [a, b, c], 0) ? creep
+   [1;32mCall: [0m(10) count(a, [b, c], _4232) ? creep
+   [1;32mCall: [0m(11) a==b ? creep
+   [1;31mFail: [0m(11) a==b ? creep
+   [1;33mRedo: [0m(10) count(a, [b, c], _4232) ? creep
+   [1;32mCall: [0m(11) count(a, [c], _4232) ? creep
+   [1;32mCall: [0m(12) a==c ? creep
+   [1;31mFail: [0m(12) a==c ? creep
+   [1;33mRedo: [0m(11) count(a, [c], _4232) ? creep
+   [1;32mCall: [0m(12) count(a, [], _4232) ? creep
+   [1;32mExit: [0m(12) count(a, [], 0) ? creep
+   [1;32mExit: [0m(11) count(a, [c], 0) ? creep
+   [1;32mExit: [0m(10) count(a, [b, c], 0) ? creep
+   [1;32mCall: [0m(10) 0 is 0+1 ? creep
+   [1;31mFail: [0m(10) 0 is 0+1 ? creep
+   [1;33mRedo: [0m(12) count(a, [], _4232) ? creep
+   [1;31mFail: [0m(12) count(a, [], _4232) ? creep
+   [1;31mFail: [0m(11) count(a, [c], _4232) ? creep
+   [1;31mFail: [0m(10) count(a, [b, c], _4232) ? creep
+   [1;33mRedo: [0m(9) count(a, [a, b, c], 0) ? creep
+   [1;32mCall: [0m(10) a==a ? creep
+   [1;32mExit: [0m(10) a==a ? creep
+   [1;31mFail: [0m(9) count(a, [a, b, c], 0) ? creep
+   [1;33mRedo: [0m(8) atleast1(a, [a, b, c]) ? creep
+   [1;32mExit: [0m(8) atleast1(a, [a, b, c]) ? creep
+[1mtrue.[0m
+
+notrace.
+
+
+[1mtrue.[0m
+
+atleast1(a,[b,c]).
+
+
+[1;31mfalse.[0m
+
+atleast1(a,[a,b,c,a]).
+
+
+[1mtrue.[0m
+
+noprotocol.
+
+

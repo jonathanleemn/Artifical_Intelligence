@@ -1,0 +1,54 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+
+
+\title{\vspace{-2.5cm} Generating Neighbors in Job Scheduling Using Simulated Annealing }
+\author{Jonathan Lee}
+\date{November 2018}
+
+\begin{document}
+\maketitle
+
+\section{Project Description}
+
+For our final project, we will be focusing on solving the job scheduling problem through various techniques to generate neighbors in simulated annealing. Simulated annealing is an algorithm designed to statistically guarantee finding an optimal solution \cite{ingber}.
+
+The overall objective of our project is to analyze various neighbor-generating methods in job scheduling and to compare these techniques against each other. More specifically, we will be analyzing the objective function between each of these methods given a set of parameters. These parameters would include data such as maximum time, number of jobs, and number of people. 
+
+We plan on running at least 20 trials per technique for each job scheduling parameter and then using our objective function to compare them with one another. The objective function for job scheduling seeks to minimize the maximum time taken to complete all jobs \cite{google}. We will also be running these tests repeatedly, except with the caveat of a parameter change. The parameter we are interested in changing is the number of jobs. By increasing the number of jobs, the problem becomes more complex. Job scheduling is known to be one the most intractable NP-hard optimization problems \cite{martin}. We are interested in seeing which techniques are more optimal (meaning which ones return a lower objective function) when the number of jobs increases. 
+
+
+\section{Experiments}
+
+We plan on using six different methods to generate neighbors in job scheduling. The parameters for simulated annealing will be alpha = 0.98, start = 600000, end = 0.25, and iterations = 500. This will remain the same throughout all our experiments. We will have four job scheduling parameters with an objective function that measures the longest time taken to complete it. For each job scheduling parameter, run each method 20 times. We can then compare average completion time between the different techniques and parameter. 
+
+Neighbor Generating Techniques:
+\begin{enumerate}
+\item Replace one random job for one random person
+\item Replace two random jobs for two random people
+\item Replace five random jobs for five random people
+\item Find the person with max time and give their longest job to someone random
+\item Find person with max time and give their longest job to person with shortest time
+\item Randomly assign each job to a person
+\end{enumerate}
+
+Job Scheduling Parameters (where n = number of jobs and p = number of people):
+\begin{enumerate}
+\item Max time = 100, n = 10, p = 10
+\item Max time = 100, n = 20, p = 10
+\item Max time = 100, n = 40, p = 10
+\item Max time = 100, n = 60, p = 10
+\end{enumerate}
+
+\begin{thebibliography}{10}
+
+\bibitem{ingber} Ingber, Lester. ``Simulated Annealing: Practice versus Theory,'' {\em  Pergamon Press Ltd}, vol. 18, no. 11, pp. 29-57, 1993.
+
+\bibitem{martin} Martin, P. and Shmoys, D.B. ``A New Approach to Computing Optimal Schedules for the Job-Shop Scheduling Problem,'' {\em Springer, Berlin, Heidelberg}, vol. 1084, pp. 389-403, 1996.
+
+\bibitem{google} https://developers.google.com/optimization/scheduling/job\_shop. {\em Online, The Job Shop Problem}
+
+\end{thebibliography}
+\end{document}
