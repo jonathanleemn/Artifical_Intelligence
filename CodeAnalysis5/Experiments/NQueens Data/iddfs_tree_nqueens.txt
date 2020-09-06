@@ -1,0 +1,24 @@
+Depth: 4
+Node Count: 97
+Max Frontier Count: 7
+-----------------------------
+Depth: 5
+Node Count: 363
+Max Frontier Count: 11
+-----------------------------
+Depth: 6
+Node Count: 2475
+Max Frontier Count: 16
+-----------------------------
+Depth: 7
+Node Count: 14225
+Max Frontier Count: 22
+-----------------------------
+Depth: 8
+Node Count: 117344
+Max Frontier Count: 29
+-----------------------------
+Depth: 11
+Node Count: 109761332
+Max Frontier Count: 56
+-----------------------------

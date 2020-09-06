@@ -1,0 +1,7 @@
+BFS Graph				
+discs	node_count	max_frontier_count	depth	
+3	54		6			7	
+6	1932		42			63	
+8	18660		170			255	
+10	173052		682			1023	
+11	514704		1024			2044	.....timed out

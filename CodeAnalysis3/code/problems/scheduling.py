@@ -1,0 +1,104 @@
+import random
+
+from problem import Problem
+
+class Scheduling(Problem):
+    '''
+    The scheduling problem is an optimization problem that is attempting to minimize
+    the time it takes to complete a collection of jobs distributed across a number of
+    people or processors or robots or whatever is doing the work. Formally, it would be
+    defined as:
+    - A collection of _n_ jobs.
+    - Each job _j_ take time <i>t<sub>j</sub></i>
+    - There are _p_ people to process the jobs
+    - Each person completes his/her last job at time <i>p<sub>t</sub></i>
+    - The time to complete all jobs is the maximum over all <i>p<sub>t</sub></i>
+
+    A state can be represented as a list of size _n_. Each element state[i] is in the
+    range {0:p-1}, which indicates that job _i_ will be completed by person state[i].
+    '''
+    
+    def __init__(self, job_times, people_count = 3, start_state=None,
+                 neighbor_selection="find_neighbor", objective_fn="max_time", start_fn="random"):
+        
+        Problem.__init__(self, [])
+        self.job_count = len(job_times)
+        self.job_times = job_times
+        self.people_count = people_count
+        self.start_state = start_state
+        self.start_fn = start_fn
+        # Keeping these in case you want to experiment with objective fn and neighbors
+        self.neighbor_selection = neighbor_selection
+        self.objective_fn = objective_fn
+        self.initialize_neighbor_selection_dict()
+        self.initialize_objective_fn_dict()
+
+    def random_solution_state(self):
+        # Randomly assign every job to a person
+        return [random.randint(0,self.people_count-1) for i in range(self.job_count)]
+
+    def get_initial_state(self):
+        if not self.start_fn == "given":
+            return self.random_solution_state()
+        else:
+            return self.start_state
+
+    def get_random_neighbor(self, state):
+        return self.selection_for_neighbor[self.neighbor_selection](state)
+
+    # vvvvvvvvvvvvvv  DEFINE a function to get a neighbor  vvvvvvvvvvvvvv
+    # put it in the selection_for_neighbor dictionary below
+    def find_neighbor(self, state):
+        #generate random index to change
+        index1 = random.randint(0,self.job_count-1)
+        new_person = random.randint(0,self.people_count-1)
+        state[index1] = new_person
+        return state
+
+    def apply_objective_function(self, state):
+        return self.functions_for_evaluation[self.objective_fn](state)
+
+    # vvvvvvvvvvvvvv  DEFINE at least one objective function  vvvvvvvvvvvvvv
+    # put it in the functions_for_evaluation dictionary below
+    def max_time(self, state):
+        person_time = []
+        max = 0
+        for i in range(self.people_count):
+            person_time.append(0)
+        for job in range(len(state)):
+            person_time[state[job]] += self.job_times[job]
+        for time in person_time:
+            if max < time:
+                max = time
+        return max
+
+
+    # vvvvvvvvvvvvv   ADD YOUR neighbor and objective fn here vvvvvvvvvvvvvv
+    def initialize_neighbor_selection_dict(self):
+        self.selection_for_neighbor = {
+            "find_neighbor": self.find_neighbor
+        }
+
+    def initialize_objective_fn_dict(self):
+        self.functions_for_evaluation = {
+            "max_time": self.max_time
+        }
+
+    def pretty_print(self, node):
+        job_assignment = node.state
+        for p in range(self.people_count):
+            jobs = [i for i in range(self.job_count) if job_assignment[i]==p]
+            print(p,'has jobs',end=" ")
+            print(jobs)
+
+def all_unique(elements):
+    try:
+        answer = len(set(elements)) == len(elements)
+    except:
+        print('FAIL ',elements)
+        return True
+    return answer
+
+
+
+

@@ -1,0 +1,58 @@
+    max_time = 50 # arbitrary maximum time for any given task
+    n = 10 # (number of jobs)
+    p = 5 # (number of people
+
+state:  [3, 3, 2, 0, 2, 1, 3, 0, 4, 1]
+0 has jobs [3, 7]
+1 has jobs [5, 9]
+2 has jobs [2, 4]
+3 has jobs [0, 1, 6]
+4 has jobs [8]
+Total iterations:  364001
+Moves to better states:  205941
+Moves to worse states:  60374
+Did not move to neighbor:  97686
+
+state:  [3, 3, 2, 0, 0, 1, 4, 1, 1, 4]
+0 has jobs [3, 4]
+1 has jobs [5, 7, 8]
+2 has jobs [2]
+3 has jobs [0, 1]
+4 has jobs [6, 9]
+Total iterations:  364001
+Moves to better states:  199641
+Moves to worse states:  62261
+Did not move to neighbor:  102099
+
+state:  [4, 0, 1, 1, 0, 0, 3, 0, 3, 0]
+0 has jobs [1, 4, 5, 7, 9]
+1 has jobs [2, 3]
+2 has jobs []
+3 has jobs [6, 8]
+4 has jobs [0]
+Total iterations:  364001
+Moves to better states:  201226
+Moves to worse states:  60857
+Did not move to neighbor:  101918
+
+state:  [0, 1, 1, 2, 1, 0, 2, 4, 0, 3]
+0 has jobs [0, 5, 8]
+1 has jobs [1, 2, 4]
+2 has jobs [3, 6]
+3 has jobs [9]
+4 has jobs [7]
+Total iterations:  364001
+Moves to better states:  200629
+Moves to worse states:  61497
+Did not move to neighbor:  101875
+
+state:  [1, 0, 4, 1, 1, 1, 4, 1, 0, 1]
+0 has jobs [1, 8]
+1 has jobs [0, 3, 4, 5, 7, 9]
+2 has jobs []
+3 has jobs []
+4 has jobs [2, 6]
+Total iterations:  364001
+Moves to better states:  202767
+Moves to worse states:  60972
+Did not move to neighbor:  100262

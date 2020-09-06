@@ -1,0 +1,7 @@
+DFS_Graph				
+discs	node_count	max_frontier_count	depth	
+3	39		8			13	
+5	363		63			121	
+9	29523		4925			9841	
+11	265719		44292			88573	
+12	327855		54647			109285	.......timed out
